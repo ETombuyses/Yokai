@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld :msg="title" @titleUpdated="title = $event"/>
+    <img :src="`/assets/images/${$route.params.slug}.jpeg`" alt=""/>
   </div>
 </template>
 
