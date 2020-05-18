@@ -2,6 +2,7 @@
   <div>
     Article 
     {{ $route.params.slug }}
+    <img :src="require(`../assets/images/${this.$route.params.slug}.jpeg`)">
   </div>
 </template>
 
