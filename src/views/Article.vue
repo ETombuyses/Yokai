@@ -1,7 +1,7 @@
 <template>
   <div>
     Article 
-    <img :src="require(`../assets/${$route.params.slug}.png`)">
+    <img :src="require(`../assets/images/${this.$route.params.slug}.jpeg`)">
   </div>
 </template>
 
