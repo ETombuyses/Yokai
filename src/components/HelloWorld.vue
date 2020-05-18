@@ -3,6 +3,8 @@
     <h1 v-if="isShow">{{ msg }}</h1>
     <h1 v-else>NOT SHOWED</h1>
     <h1 @click="toggleShow()"> {{ isShow }}</h1>
+    <span @click="handleCount()">{{ count }}</span>
+    <p>{{ testComputed }}</p>
   </div>
 </template>
 
@@ -14,10 +16,20 @@ export default {
   },
   data() {
     return {
-      isShow: false
+      isShow: false,
+      count: 0
     }
   },
-  computed () {
+  computed: {
+    testComputed() {
+      if (this.count > 0) {
+        this.$emit('titleUpdated', 'Yokai')
+        return 'zerooo'
+      } else {
+        this.$emit('titleUpdated', 'Hello')
+        return 'positif'
+      }
+    }
   },
   created () {
     console.log('created')
@@ -28,6 +40,10 @@ export default {
   methods: {
     toggleShow () {
       this.isShow = !this.isShow
+    },
+    handleCount () {
+      if (this.count > 2) this.count = 0
+      else this.count++
     }
   }
 }
