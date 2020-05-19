@@ -1,9 +1,11 @@
 <template>
   <div v-if="post" class="article">
-    <img :src="require(`../assets/images/${post.title}.jpeg`)">
-    <h3>{{post.title}}</h3>
-    <p class="body">{{post.body[0]}}</p>
-    <a>{{buttonText}}</a>
+    <router-link :to="`/article/${post.id}`">
+      <img :src="require(`../assets/images/${post.img}.jpeg`)">
+      <h3>{{post.title}}</h3>
+      <p class="body">{{post.body[0]}}</p>
+      <p class="link">{{buttonText}}</p>
+    </router-link>
   </div>
 </template>
 
@@ -11,13 +13,19 @@
 export default {
   props: {
     post: Object,
-    buttonText: String,
-  }
+    buttonText: String
+    }
 }
 </script>
 
 <style scoped lang="scss">
 div {
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   img{
     width: 100%;
   }
@@ -51,7 +59,8 @@ div {
     max-height: 129px;
   }
 
-  a {
+  .link {
+    display: inline-block;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
