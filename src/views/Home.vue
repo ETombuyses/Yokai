@@ -55,18 +55,16 @@ export default {
     width: 100%;
     padding-left: 40px;
     padding-right: 80px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.671)), url("../assets/images/background.png") no-repeat center 450px;
+    background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.671)), url("../assets/images/background.png") no-repeat center 350px;
     object-fit: cover;
     padding-bottom: 120px;
 
     .yokai {
       display: flex;
       margin-bottom: 120px;
-      margin-top: 120px;
+      margin-top: 60px;
     }
   }
 
