@@ -1,15 +1,25 @@
 <template>
   <div class="home">
-    <div class="yokai">
-      <img src="../assets/images/home.jpg">
-      <Header title="Qu’est ce qu’un Yokai ?" textBackground="日本の妖怪" paragraphe="Monstre, créature, esprit, fantôme, objet, démon où tout autre apparition étrange souvent malfaisant ou simplement malicieux du folklore japonais qui incarne les obsessions, les vices, les craintes, les mal-être, les blessures, les rancoeurs et tout état émotionnel compliqué des humains. Ils représentent également des phénomènes naturels, des objets créés par les hommes ou des éléments naturels inanimés (rocher…)."/>
-    </div>
-    <div class="articles_section">
-      <h2>Les nouveaux articles</h2>
-      <div class="articles" >
-        <ArticleComponent v-for="article in articles" :key="article.id" :article="article" buttonText="Lire l'article"/>
-      </div>
-    </div>
+
+    <Header 
+    v-if="definition" 
+    class="header"
+    title="Qu’est ce qu’un Yokai ?" 
+    textBackground="妖怪とは？" 
+    :paragraph="definition" 
+    image="yokai.jpg"/>
+
+    <h2 class="newArticles-title">Les nouveaux articles</h2>
+    <ul class="articles" v-if="posts">
+      <li class="article" v-for="(post, index) in 3" :key="posts[index].id" >
+        <ArticleComponent
+        class="article-item"
+        :key="posts[index].id" 
+        :post="posts[index]" 
+        buttonText="Lire l'article"/>
+      </li>
+    </ul>
+
   </div>
 </template>
 
@@ -26,81 +36,94 @@ export default {
   },
   data () {
     return {
-      articles: [
-        {
-          title: "Tengu",
-          paragraphe: "Ce sont les équivalents de la culture japonaise de nos ogres ou autres trolls, souvent bleus ou rou...",
-        },
-        {
-          title: "Kurobozu",
-          paragraphe: "Il apparaît en pleine nuit dans les chambres à coucher et absorbe le souffle des personnes qui y dorment.",
-        },
-        {
-          title: "Wanyudo",
-          paragraphe: "Wanyudo à l’apparence d’une roue de chariot en feu avec la tête d’un homme au milieu. Il est l’âme damn...",
-        },
-      ]
+      posts: null,
+      definition: null
     }
+  },
+  created () {
+    fetch('https://my-json-server.typicode.com/ETombuyses/YokaiDB/posts').then(response => {
+      // json() pour transformer les data en json
+      console.log(response.body)
+      response.json().then(data => {
+        this.posts = data
+      })
+    })
+
+    fetch('https://my-json-server.typicode.com/ETombuyses/YokaiDB/yokaiDefinition').then(response => {
+      // json() pour transformer les data en json
+      console.log(response.body)
+      response.json().then(data => {
+        this.definition = data[0].definition
+      })
+    })
   }
 }
 </script>
 
 <style lang="scss" scoped>
 
-  * {
-    box-sizing: border-box;
+@import '../assets/styles/style.scss';
+
+.header {
+  margin-bottom: 50px;
+  width: 100%;
+
+  @media screen and (min-width: 500px) {
+    margin-bottom: 70px;
   }
 
-  .home {
-    width: 100%;
-    padding-left: 40px;
-    padding-right: 80px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
+  @media screen and (min-width: 850px) {
+    margin-bottom: 120px;
+  }
+}
 
-    .yokai {
-      display: flex;
-      margin-bottom: 120px;
-      margin-top: 120px;
-    }
+.newArticles-title {
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 40px;
+  }
+}
+
+
+.articles {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (min-width: 450px) {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
-  img {
-    width: 40%;
-    margin-right: 30px;
-    object-fit: cover;
-  }
-
-  @media screen and (max-width: 700px) {
-    img {
-      display: none
-    }
-    .home {
-      padding: 0;
-    .yokai {
-      margin-bottom: 10px;
-      margin-top: 10px;
-    }
-    }
-  }
-
-  .articles_section {
+  .article {
     width: 100%;
 
-    h2 {
+    &:not(:last-child) {
       margin-bottom: 30px;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 32px;
-      line-height: 38px;
     }
 
-    .articles {
-      display: flex;
-      justify-content: space-between;
+    .article-item {
+      width: 100%;
+    }
 
+    @media screen and (min-width: 450px) {
+      width: 48%;
+
+      &:last-child {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (min-width: 750px) {
+      width: 30%;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 26%;
     }
   }
+}
+
 </style>

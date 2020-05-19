@@ -1,60 +1,62 @@
 <template>
-     <div>
-        <img :src="require(`../assets/images/${article.title}.jpeg`)">
-        <h3>{{article.title}}</h3>
-        <p>{{article.paragraphe}}</p>
-        <a>{{buttonText}}</a>
-    </div>
+  <article v-if="post" class="article">
+    <router-link :to="`/article/${post.id}`">
+      <img :src="require(`../assets/images/${post.img}.jpeg`)">
+      <h3 class="title">{{post.title}}</h3>
+      <p class="body">{{post.body[0]}}</p>
+      <span class="link">{{buttonText}}</span>
+    </router-link>
+  </article>
 </template>
 
 <script>
 export default {
-    props: {
-    article: Object,
-    buttonText: String,
-    },
+  props: {
+    post: Object,
+    buttonText: String
+  }
 }
 </script>
 
 <style scoped lang="scss">
-div {
-    width: 25%;
-    img{
-        width: 100%;
-    }
-    h3,p,a {
-        margin: 0;
-    }
 
-    h3 {
-        margin-bottom: 8px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 23px;
-    }
+@import '../assets/styles/style.scss';
 
-    p {
-        margin-bottom: 16px;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 16px;
-        text-align: justify;
-    }
+.article {
+  cursor: pointer;
 
-    a {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 16px;
-        text-decoration-line: none;
-        color: #D90429;
-        transition: 0.3s;
-        cursor: pointer;
-        &:hover{
-            border-bottom: 2px #D90429 solid
-        }
-    }
+  &:hover .link {
+    border-bottom: 2px $red solid;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.body {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 120%;
+
+  // elipse ...
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.link {
+  font-weight: bold;
+  font-size: 14px;
+  color: $red;
+  transition: 0.3s;
 }
 </style>
