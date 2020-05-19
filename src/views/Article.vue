@@ -1,6 +1,7 @@
 <template>
   <div v-if="post" class="article">
       <h1 class="title">{{post.title}}</h1>
+      <span>{{post.kanji}}</span>
       <img :src="require(`../assets/images/${post.img}.jpeg`)">
       <div class="content">
         <p v-for="(paragraph, index) in post.body" :key="index">{{paragraph}}</p>
@@ -35,6 +36,17 @@ export default {
     margin: 0 auto;
     min-height: 30vh;
     margin-bottom: 60px;
+    position: relative;
+
+    span {
+      position: absolute;
+      font-weight: bold;
+      font-size: 50px;
+      top: -15px;
+      left: 55%;
+      color: rgba(255, 0, 43, 0.274);
+      transform: translateX(-50%);
+    }
 
     img {
       width: 100%;
@@ -52,6 +64,13 @@ export default {
     max-width: 650px;
     text-align: center;
     margin: 0 auto;
+
+    p {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: calc(18px*1.75);
+      text-align: justify;
+    }
   }
 
   p:not(:last-child) {
