@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <img class="logo" src="./assets/images/logo.png">
-      <div>
-        <router-link class="" to="/">Home</router-link>
-        <router-link to="/listing">Listing</router-link>
+    <div class="nav">
+      <img class="logo" :src="require('./assets/yokai-logo.png')">
+      <div class="links">
+        <router-link class="link" to="/">Home</router-link>
+        <router-link class="link" to="/listing">Listing</router-link>
       </div>
     </div>
     <router-view/>
@@ -19,24 +19,25 @@
   color: #2c3e50;
 }
 
-#nav {
+.nav {
   margin: 20px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 
 
   .logo {
-    height: 75px;
-  }
+    height: 50px;
+    margin-bottom: 30px;
 
-  @media screen and (max-width: 500px) {
-    .logo {
-      height: 50px;
+    @media screen and (min-width: 501px) {
+      height: 75px;
     }
   }
 
-  a {
+  .link {
+    position: relative;
     text-decoration: none;
     margin-right: 10px;
     font-weight: bold;
@@ -46,7 +47,24 @@
     &:hover {
       border-bottom: 2px #181818 solid;
     }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    &:not(:last-child):after {
+      content: "";
+      position: absolute;
+      height: 22px;
+      width: 1px;
+      background: grey;
+      right: -20px;
+    }
   }
+
 
   a.router-link-exact-active {
     border-bottom: 2px #d60000 solid;
