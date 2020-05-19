@@ -19,6 +19,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+ @import '../assets/styles/style.scss';
+
 div {
 
   a {
@@ -70,7 +73,7 @@ div {
     transition: 0.3s;
     cursor: pointer;
     &:hover{
-      border-bottom: 2px $red solid
+      border-bottom: 2px $red solid;
     }
   }
 }

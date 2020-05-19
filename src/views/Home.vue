@@ -52,6 +52,9 @@ export default {
 
 <style lang="scss" scoped>
 
+ @import '../assets/styles/style.scss';
+
+
   .home {
     width: 100%;
     padding-left: 40px;

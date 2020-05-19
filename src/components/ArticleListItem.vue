@@ -17,6 +17,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 
+ @import '../assets/styles/style.scss';
+
+
   .post {
     display: flex;
     flex-direction: column;

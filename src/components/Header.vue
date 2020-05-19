@@ -23,6 +23,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+ @import '../assets/styles/style.scss';
+
 
   .header {
     text-align: justify;
@@ -39,7 +41,6 @@ export default {
       top: 50%;
       transform: translateY(-50%);
       left: -20px;
-      opacity: 0.5;
 
       @media screen and (min-width: 700px) {
         display: block;
