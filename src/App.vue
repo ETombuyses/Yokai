@@ -103,6 +103,11 @@ html, body {
   background: rgba(217, 4, 41, 0.1);
   margin: 0;
   padding: 16px;
+  margin-top: 120px;
+
+  @media screen and (max-width: 501px) {
+    margin-top: 60px;
+  }
 
 
   .logo {
