@@ -16,19 +16,24 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
   color: #2c3e50;
 }
 
 #nav {
   margin: 20px;
-  /* padding-right: 50px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+
   .logo {
     height: 75px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .logo {
+      height: 50px;
+    }
   }
 
   a {

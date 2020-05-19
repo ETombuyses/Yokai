@@ -1,15 +1,16 @@
 <template>
   <div class="about">
-    <h1>This is an listing page</h1>
+    <h1>Index of all Yokai</h1>
     <div class="content">
       <div class="card" v-for="post in posts" :key="post.id">
-        <router-link :to="`/article/${post.id}`">
+        <router-link class="card_link" :to="`/article/${post.id}`">
           {{post.title}}
         </router-link>
       </div>
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {
@@ -28,15 +29,37 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
   .content {
     display: flex;
     flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
   }
 
   .card {
-    width: 33%;
+    margin: 10px;
+    width: 45%;
     padding: 10px;
     border: 1px solid black;
+
+    .card_link{
+      font-weight: bold;
+      text-decoration: none;
+      color: #181818;
+      transition: border 0.3s;
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      
+      &:hover {
+        border-bottom: 2px #181818 solid;
+      }
+    }
   }
+}
 </style>
