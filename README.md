@@ -4,6 +4,10 @@
 
 https://my-json-server.typicode.com/ETombuyses/YokaiDB
 
+## live site
+
+https://yokai.netlify.app
+
 ## Project setup
 ```
 npm install
