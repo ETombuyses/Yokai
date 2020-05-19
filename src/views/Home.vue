@@ -7,7 +7,7 @@
     <div class="articles_section">
       <h2>Les nouveaux articles</h2>
       <div class="articles" >
-        <ArticleComponent v-for="article in articles" :key="article.id" :article="article" buttonText="Lire l'article"/>
+        <ArticleComponent class="article_component" v-for="article in articles" :key="article.id" :article="article" buttonText="Lire l'article"/>
       </div>
     </div>
   </div>
@@ -101,6 +101,17 @@ export default {
       display: flex;
       justify-content: space-between;
 
+      @media screen and (max-width: 500px) {
+        flex-direction: column;
+      }
+
+      .article_component{
+        width: 25%;
+        @media screen and (max-width: 500px) {
+          width: 100%;
+          padding-bottom: 40px;
+        }
+      }
     }
   }
 </style>

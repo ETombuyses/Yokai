@@ -3,7 +3,7 @@
         <img :src="require(`../assets/images/${article.title}.jpeg`)">
         <h3>{{article.title}}</h3>
         <p>{{article.paragraphe}}</p>
-        <a>{{buttonText}}</a>
+                            <a>{{buttonText}}</a>
     </div>
 </template>
 
@@ -18,7 +18,6 @@ export default {
 
 <style scoped lang="scss">
 div {
-    width: 25%;
     img{
         width: 100%;
     }
