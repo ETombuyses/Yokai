@@ -42,3 +42,36 @@ workbox.routing.registerRoute(
 		]
 	})
 )
+
+// notifications
+self.addEventListener('push', event => {
+  let pushMessage = event.data.text()
+
+  // icon depuis dossier public !!!!
+  // vibrate = 4 vibrations de x milli sec
+  // tag = va avec la vibration
+  const options = {
+    body: pushMessage,
+    icon: './img/apple-touch-icon-60x60.png',
+    image: './img/apple-touch-icon-60x60.png',
+    vibrate: [200, 100, 200, 100],
+    tag: 'vibration-sample'
+  }
+
+  // on attend d'avoir reçu le push ?
+  event.waitUntil(
+    self.registration.showNotification(pushMessage, options)
+  )
+})
+
+// gérer le click sur les notifs
+self.addEventListener('notificationclick', event => {
+  // fermer la notif (important sinon on peut pas en push de nouvelles tant qu'une ancienne est active)
+  event.notification.close()
+
+  // page de redirectiion
+  const promiseChain = clients.openWindow('http://127.0.0.1:8887/#/')
+  event.waitUntil(
+    promiseChain
+  )
+})

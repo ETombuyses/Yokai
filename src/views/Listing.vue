@@ -26,7 +26,13 @@ export default {
     }
   },
   created () {
-    fetch('https://jsonplaceholder.typicode.com/posts').then(response => {
+    // fetch('https://jsonplaceholder.typicode.com/posts').then(response => {
+    //   // json() pour transformer les data en json
+    //   response.json().then(data => {
+    //     this.posts = data
+    //   })
+    // })
+    fetch('https://my-json-server.typicode.com/ETombuyses/YokaiDB/articles').then(response => {
       // json() pour transformer les data en json
       response.json().then(data => {
         this.posts = data
