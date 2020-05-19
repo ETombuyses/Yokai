@@ -12,12 +12,12 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
 // mettre certaines routes en cache
 workbox.routing.registerRoute(
   // quelles routes
-  new RegExp('https://jsonplaceholder.typicode.com/(.*)'),
+  new RegExp('https://my-json-server.typicode.com/ETombuyses/YokaiDB/(.*)'),
   new workbox.strategies.CacheFirst({
     // options de mise en cache de l'url/route
-    cacheName: 'jsonplaceholder',
+    cacheName: 'yokaiDB',
     method: 'GET',
-    // mettre ene cache uniquement les responses avec un statut 0 et 200 (pas les 404 par ex)
+    // mettre en cache uniquement les responses avec un statut 0 et 200 (pas les 404 par ex)
     cacheableResponse: {statuses: [0, 200]},
     plugins: [
       new workbox.expiration.Plugin({
@@ -28,7 +28,7 @@ workbox.routing.registerRoute(
   })
 )
 
-
+// mettre certaines google fonts
 workbox.routing.registerRoute(
 	new RegExp('https://fonts.(?:googleapies|gstatic).com/(.*)'),
 	new workbox.strategies.CacheFirst({

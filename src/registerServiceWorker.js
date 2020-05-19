@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
       Notification.requestPermission().then(result => {
         console.log('result permission:', result)
         if (result === 'granted') {
-          console.log('coucou')
+          // do something if the permission is granted
         } else console.log('notification denied') 
       })
     },
