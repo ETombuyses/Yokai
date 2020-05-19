@@ -1,9 +1,9 @@
 <template>
      <div>
-        <img :src="require(`../assets/images/${article.title}.jpeg`)">
+        <img :src="require(`../assets/images/${article.image}.jpeg`)">
         <h3>{{article.title}}</h3>
         <p>{{article.paragraphe}}</p>
-                            <a>{{buttonText}}</a>
+        <a>{{buttonText}}</a>
     </div>
 </template>
 

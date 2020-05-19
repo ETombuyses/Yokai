@@ -29,14 +29,17 @@ export default {
       articles: [
         {
           title: "Tengu",
+          image: "tengu",
           paragraphe: "Ce sont les équivalents de la culture japonaise de nos ogres ou autres trolls, souvent bleus ou rou...",
         },
         {
           title: "Kurobozu",
+          image: "kurobozu",
           paragraphe: "Il apparaît en pleine nuit dans les chambres à coucher et absorbe le souffle des personnes qui y dorment.",
         },
         {
           title: "Wanyudo",
+          image: "wanyudo",
           paragraphe: "Wanyudo à l’apparence d’une roue de chariot en feu avec la tête d’un homme au milieu. Il est l’âme damn...",
         },
       ]
