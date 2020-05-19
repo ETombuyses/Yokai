@@ -52,17 +52,13 @@ export default {
 
 <style lang="scss" scoped>
 
-  * {
-    box-sizing: border-box;
-  }
-
   .home {
     width: 100%;
     padding-left: 40px;
     padding-right: 80px;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.671)), url("../assets/images/background.png") no-repeat center 350px;
+    background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.671)), url("../assets/images/sakana.png") no-repeat center 350px;
     object-fit: cover;
     padding-bottom: 120px;
 

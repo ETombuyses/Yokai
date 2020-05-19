@@ -23,7 +23,7 @@ div {
 
   a {
     text-decoration: none;
-    color: black;
+    color: $black;
   }
 
   img{
@@ -66,11 +66,11 @@ div {
     font-size: 14px;
     line-height: 16px;
     text-decoration-line: none;
-    color: #D90429;
+    color: $red;
     transition: 0.3s;
     cursor: pointer;
     &:hover{
-      border-bottom: 2px #D90429 solid
+      border-bottom: 2px $red solid
     }
   }
 }

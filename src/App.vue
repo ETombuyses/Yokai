@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="nav">
-      <img class="logo" :src="require('./assets/yokai-logo.png')">
+      <img class="logo" :src="require('./assets/images/yokai-logo.png')">
       <div class="links">
         <router-link class="link" to="/">Accueil</router-link>
         <router-link class="link" to="/listing">Yokais</router-link>
@@ -9,7 +9,7 @@
     </div>
     <router-view/>
     <div class="footer">
-      <img class="logo" :src="require('./assets/yokai-logo.png')">
+      <img class="logo" :src="require('./assets/images/yokai-logo.png')">
       <div class="links">
         <router-link class="link" to="/">Accueil</router-link>
         <router-link class="link" to="/listing">Yokais</router-link>
@@ -21,24 +21,18 @@
 
 <style lang="scss">
 
-* {
-    box-sizing: border-box;
-  }
+ @import './assets/styles/style.scss';
 
-html, body {
-  margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+
+* {
+  box-sizing: border-box;
 }
   
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: $black;
 }
 
 .nav {
@@ -63,11 +57,11 @@ html, body {
     text-decoration: none;
     margin-right: 10px;
     font-weight: bold;
-    color: #181818;
+    color: $black;
     transition: border 0.3s;
 
     &:hover {
-      border-bottom: 2px #181818 solid;
+      border-bottom: 2px $black solid;
     }
 
     &:not(:last-child) {
@@ -82,16 +76,16 @@ html, body {
       position: absolute;
       height: 22px;
       width: 1px;
-      background: grey;
+      background: $grey;
       right: -20px;
     }
   }
 
 
   a.router-link-exact-active {
-    border-bottom: 2px #d60000 solid;
+    border-bottom: 2px  solid;
     font-weight: bold;
-    color: #d60000;
+    color: $red;
   }
 }
 
@@ -100,7 +94,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(217, 4, 41, 0.1);
+  background: $pink;
   margin: 0;
   padding: 16px;
 
@@ -118,20 +112,20 @@ html, body {
     font-weight: 500;
     font-size: 10px;
     line-height: 12px;
-    color: rgba(43, 45, 66, 0.5);
+    color: $grey;
   }
 
   .link {
     position: relative;
     text-decoration: none;
     font-weight: bold;
-    color: #181818;
+    color: $black;
     transition: border 0.3s;
     font-size: 12px;
     margin-bottom: 21px;
 
     &:hover {
-      border-bottom: 2px #181818 solid;
+      border-bottom: 2px $black solid;
     }
 
     &:not(:last-child) {
@@ -144,9 +138,9 @@ html, body {
 
 
   a.router-link-exact-active {
-    border-bottom: 2px #d60000 solid;
+    border-bottom: 2px $red solid;
     font-weight: bold;
-    color: #d60000;
+    color: $red;
   }
 }
 

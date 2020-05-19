@@ -31,10 +31,6 @@ export default {
 
 <style scoped lang="scss">
 
-* {
-  box-sizing: border-box;
-}
-
   .article {
     max-width: 1000px;
     margin: 0 auto;

@@ -24,10 +24,6 @@ export default {
 
 <style scoped lang="scss">
 
-  * {
-    box-sizing: border-box;
-  }
-
   .header {
     text-align: justify;
 
@@ -38,7 +34,7 @@ export default {
     span {
       display: none;
       font-size: 4em;
-      color: rgba(217, 4, 39, 0.26);
+      color: $pink;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);

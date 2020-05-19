@@ -39,10 +39,6 @@ export default {
 
 <style scoped lang="scss">
 
-* {
-    box-sizing: border-box;
-  }
-
   .header {
     margin-bottom: 56px;
   }
@@ -77,7 +73,7 @@ export default {
       display: block;
       height: 1px;
       width: 120px;
-      background: grey;
+      background: $grey;
       bottom: -30px;
     }
   }

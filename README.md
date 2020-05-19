@@ -1,5 +1,9 @@
 # yokai
 
+## DB
+
+https://my-json-server.typicode.com/ETombuyses/YokaiDB
+
 ## Project setup
 ```
 npm install
