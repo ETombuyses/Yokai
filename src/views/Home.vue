@@ -1,18 +1,17 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld :msg="title" @titleUpdated="title = $event"/>
+    <HomePrez :msg="title" @titleUpdated="title = $event"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HomePrez from '@/components/HomePrez.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    HomePrez
   },
   data () {
     return {

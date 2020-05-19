@@ -2,7 +2,7 @@
   <div class="about">
     <h1>Index of all Yokai</h1>
     <div class="content">
-      <div class="card" v-for="post in posts" :key="post.id">
+      <div class="card background1" v-for="post in posts" :key="post.id">
         <router-link class="card_link" :to="`/article/${post.id}`">
           {{post.title}}
         </router-link>
