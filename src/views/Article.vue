@@ -1,6 +1,7 @@
 <template>
   <div v-if="post" class="article">
       <h1 class="title">{{post.title}}</h1>
+      <img :src="require(`../assets/images/${post.img}.jpeg`)">
       <div class="content">
         <p v-for="(paragraph, index) in post.body" :key="index">{{paragraph}}</p>
       </div>
@@ -34,9 +35,17 @@ export default {
 }
 
   .article {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     min-height: 30vh;
+    margin-bottom: 60px;
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: none;
+      object-position: 50% 30%;
+    }
   }
 
   .title {
