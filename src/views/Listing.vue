@@ -1,6 +1,9 @@
 <template>
   <div class="about">
-    <h1>Index of all Yokai</h1>
+    <Header 
+    :title="'Tous nos articles'"
+    :textBackground="'ブログ記事'"
+    />
     <div class="content">
       <div class="card background1" v-for="post in posts" :key="post.id">
         <router-link class="card_link" :to="`/article/${post.id}`">
@@ -12,7 +15,11 @@
 </template>
 
 <script>
+import Header from '../components/Header'
 export default {
+  components: {
+    Header
+  },
   data() {
     return {
       posts: null
@@ -30,6 +37,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+* {
+    box-sizing: border-box;
+  }
 
 .about {
   display: flex;
