@@ -3,8 +3,8 @@
     <div class="nav">
       <img class="logo" :src="require('./assets/yokai-logo.png')">
       <div class="links">
-        <router-link class="link" to="/">Home</router-link>
-        <router-link class="link" to="/listing">Listing</router-link>
+        <router-link class="link" to="/">Accueil</router-link>
+        <router-link class="link" to="/listing">Les Yokais</router-link>
       </div>
     </div>
     <router-view/>
@@ -14,7 +14,7 @@
         <router-link class="link" to="/">Home</router-link>
         <router-link class="link" to="/listing">Listing</router-link>
       </div>
-      <p>Create with ❤️ by Emilie, Cassandra and Tristan</p>
+      <p>Crée avec ❤️ par Emilie, Cassandra and Tristan</p>
     </div>
   </div>
 </template>
