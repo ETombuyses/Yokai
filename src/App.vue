@@ -97,11 +97,14 @@ html, body {
 
 .footer {
   display: flex;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: rgba(217, 4, 41, 0.1);
-  margin: 0;
   padding: 16px;
   margin-top: 120px;
 
