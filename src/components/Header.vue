@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img v-if="image" :src="require(`../assets/images/${image}`)">
+    <img v-if="image" :src="require(`../assets/images/${image}`)" alt="`représentations de différents yokai`">
     <div class="text-section">
       <div class="title-section">
         <h1 class="title">{{ title }}</h1>

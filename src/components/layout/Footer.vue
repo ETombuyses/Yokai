@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <img class="logo" :src="require('../../assets/images/yokai-logo.png')">
+    <img class="logo" :src="require('../../assets/images/yokai-logo.png')" alt="logo yokai">
     <address class="credentials">Crée avec ❤️ par Emilie Tombuyses, Cassandra Doux and Tristan Lemire</address>
   </footer>
 </template>
