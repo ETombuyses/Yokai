@@ -52,10 +52,6 @@ export default {
 
 <style lang="scss" scoped>
 
-  * {
-    box-sizing: border-box;
-  }
-
   .home {
     width: 100%;
     padding-left: 40px;

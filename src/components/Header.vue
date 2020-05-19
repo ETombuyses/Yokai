@@ -24,10 +24,6 @@ export default {
 
 <style scoped lang="scss">
 
-  * {
-    box-sizing: border-box;
-  }
-
   .header {
     text-align: justify;
 

@@ -17,10 +17,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-  * {
-    box-sizing: border-box;
-  }
-
   .post {
     display: flex;
     flex-direction: column;

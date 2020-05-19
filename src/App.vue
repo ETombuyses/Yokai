@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="nav">
-      <img class="logo" :src="require('./assets/yokai-logo.png')">
+      <img class="logo" :src="require('./assets/images/yokai-logo.png')">
       <div class="links">
         <router-link class="link" to="/">Home</router-link>
         <router-link class="link" to="/listing">Listing</router-link>
@@ -9,7 +9,7 @@
     </div>
     <router-view/>
     <div class="footer">
-      <img class="logo" :src="require('./assets/yokai-logo.png')">
+      <img class="logo" :src="require('./assets/images/yokai-logo.png')">
       <div class="links">
         <router-link class="link" to="/">Home</router-link>
         <router-link class="link" to="/listing">Listing</router-link>
@@ -21,17 +21,11 @@
 
 <style lang="scss">
 
-* {
-    box-sizing: border-box;
-  }
+ @import './assets/styles/style.scss';
 
-html, body {
-  margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+
+* {
+  box-sizing: border-box;
 }
   
 #app {

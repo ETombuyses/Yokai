@@ -39,10 +39,6 @@ export default {
 
 <style scoped lang="scss">
 
-* {
-    box-sizing: border-box;
-  }
-
   .header {
     margin-bottom: 56px;
   }
