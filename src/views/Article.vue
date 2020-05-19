@@ -31,55 +31,52 @@ export default {
 
 <style scoped lang="scss">
 
- @import '../assets/styles/style.scss';
+@import '../assets/styles/style.scss';
 
-
-  .article {
-    max-width: 1000px;
-    margin: 0 auto;
-    min-height: 30vh;
-    margin-bottom: 60px;
-    position: relative;
-    @media screen and (max-width: 500px) {
-      padding: 20px;
-    }
-
-    span {
-      position: absolute;
-      font-weight: bold;
-      font-size: 50px;
-      top: -15px;
-      left: 55%;
-      color: rgba(255, 0, 43, 0.274);
-      transform: translateX(-50%);
-    }
-
-    img {
-      width: 100%;
-      height: 300px;
-      object-fit: none;
-      object-position: 50% 30%;
-    }
+.article {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 30vh;
+  margin-bottom: 60px;
+  position: relative;
+   
+  @media screen and (max-width: 500px) {
+    padding: 20px;
   }
 
-  .title {
-    text-align: center;
+  span {
+    position: absolute;
+    font-weight: bold;
+    font-size: 50px;
+    top: -15px;
+    left: 55%;
+    color: rgba(255, 0, 43, 0.274);
+    transform: translateX(-50%);
   }
 
-  .content {
-    max-width: 650px;
-    text-align: center;
-    margin: 0 auto;
-
-    p {
-      font-weight: normal;
-      font-size: 18px;
-      line-height: calc(18px*1.75);
-      text-align: justify;
-    }
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: none;
+    object-position: 50% 30%;
   }
+}
 
-  p:not(:last-child) {
-    margin-bottom: 10px;
+.title {
+  text-align: center;
+}
+
+.content {
+  max-width: 650px;
+  text-align: center;
+  margin: 0 auto;
+
+  p {
+    text-align: justify;
   }
+}
+
+p:not(:last-child) {
+  margin-bottom: 10px;
+}
 </style>

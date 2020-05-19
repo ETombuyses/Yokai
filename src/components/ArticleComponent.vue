@@ -1,12 +1,12 @@
 <template>
-  <div v-if="post" class="article">
+  <article v-if="post" class="article">
     <router-link :to="`/article/${post.id}`">
       <img :src="require(`../assets/images/${post.img}.jpeg`)">
-      <h3>{{post.title}}</h3>
+      <h3 class="title">{{post.title}}</h3>
       <p class="body">{{post.body[0]}}</p>
-      <p class="link">{{buttonText}}</p>
+      <span class="link">{{buttonText}}</span>
     </router-link>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -14,60 +14,49 @@ export default {
   props: {
     post: Object,
     buttonText: String
-    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 
- @import '../assets/styles/style.scss';
+@import '../assets/styles/style.scss';
 
-div {
+.article {
+  cursor: pointer;
 
-  a {
-    text-decoration: none;
-    color: $black;
+  &:hover .link {
+    border-bottom: 2px $red solid;
   }
+}
 
-  img{
-    width: 100%;
-  }
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
 
-  h3 {
-    margin-bottom: 8px;
-    font-style: normal;
-  }
+.title {
+  margin-bottom: 10px;
+}
 
-  p {
-    margin-bottom: 16px;
-    max-height: 12ch;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: justify;
+.body {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 120%;
 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    max-height: 129px;
-  }
+  // elipse ...
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 
-  .link {
-    display: inline-block;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    text-decoration-line: none;
-    color: $red;
-    transition: 0.3s;
-    cursor: pointer;
-    &:hover{
-      border-bottom: 2px $red solid;
-    }
-  }
+.link {
+  font-weight: bold;
+  font-size: 14px;
+  color: $red;
+  transition: 0.3s;
 }
 </style>

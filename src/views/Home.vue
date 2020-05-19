@@ -1,15 +1,25 @@
 <template>
   <div class="home">
-    <div class="yokai">
-      <img src="../assets/images/home.jpg">
-      <Header v-if="definition" title="Qu’est ce qu’un Yokai ?" textBackground="日本の妖怪" :paragraphe="definition"/>
-    </div>
-    <div class="articles_section">
-      <h2>Les nouveaux articles</h2>
-      <div class="articles"  v-if="posts" >
-        <ArticleComponent class="article_component" v-for="(post, index) in 3" :key="posts[index].id" :post="posts[index]" buttonText="Lire l'article"/>
-      </div>
-    </div>
+
+    <Header 
+    v-if="definition" 
+    class="header"
+    title="Qu’est ce qu’un Yokai ?" 
+    textBackground="妖怪とは？" 
+    :paragraph="definition" 
+    image="yokai.jpg"/>
+
+    <h2 class="newArticles-title">Les nouveaux articles</h2>
+    <ul class="articles" v-if="posts">
+      <li class="article" v-for="(post, index) in 3" :key="posts[index].id" >
+        <ArticleComponent
+        class="article-item"
+        :key="posts[index].id" 
+        :post="posts[index]" 
+        buttonText="Lire l'article"/>
+      </li>
+    </ul>
+
   </div>
 </template>
 
@@ -52,74 +62,79 @@ export default {
 
 <style lang="scss" scoped>
 
- @import '../assets/styles/style.scss';
+@import '../assets/styles/style.scss';
+
+.home {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.671)), url("../assets/images/sakana.png") no-repeat center 350px;
+  object-fit: cover;
+
+  @media screen and (min-width: 500px) {
+    padding: 20px 40px;
+  }
+}
+
+.header {
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 500px) {
+    margin-bottom: 70px;
+  }
+
+  @media screen and (min-width: 850px) {
+    margin-bottom: 120px;
+  }
+}
+
+.newArticles-title {
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 40px;
+  }
+}
 
 
-  .home {
+.articles {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (min-width: 450px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .article {
     width: 100%;
-    padding-left: 40px;
-    padding-right: 80px;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.671)), url("../assets/images/sakana.png") no-repeat center 350px;
-    object-fit: cover;
-    padding-bottom: 120px;
 
-    .yokai {
-      display: flex;
-      margin-bottom: 120px;
-      margin-top: 60px;
-    }
-  }
-
-  img {
-    width: 40%;
-    margin-right: 30px;
-    object-fit: cover;
-  }
-
-  @media screen and (max-width: 700px) {
-    img {
-      display: none
-    }
-    .home {
-      padding: 0;
-    .yokai {
-      margin-bottom: 10px;
-      margin-top: 10px;
-      @media screen and (max-width: 500px) {
-        padding: 20px;
-      }
-    }
-    }
-  }
-
-  .articles_section {
-    width: 100%;
-    @media screen and (max-width: 500px) {
-      padding: 20px;
-    }
-
-    h2 {
+    &:not(:last-child) {
       margin-bottom: 30px;
-      font-style: normal;
     }
 
-    .articles {
-      display: flex;
-      justify-content: space-between;
+    .article-item {
+      width: 100%;
+    }
 
-      @media screen and (max-width: 500px) {
-        flex-direction: column;
-      }
+    @media screen and (min-width: 450px) {
+      width: 48%;
 
-      .article_component{
-        width: 25%;
-        @media screen and (max-width: 500px) {
-          width: 100%;
-          padding-bottom: 40px;
-        }
+      &:last-child {
+        margin-bottom: 30px;
       }
+    }
+
+    @media screen and (min-width: 750px) {
+      width: 30%;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 26%;
     }
   }
+}
+
 </style>

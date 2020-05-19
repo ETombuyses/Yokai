@@ -25,7 +25,6 @@ export default {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    text-transform: capitalize;
 
     &:hover .title {
       color: $red;

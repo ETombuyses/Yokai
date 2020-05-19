@@ -1,11 +1,14 @@
 <template>
-    <div class="header" :style="{width: width}">
-      <div class="title">
-        <h1>{{ title }}</h1>
-        <span>{{ textBackground }}</span>
+  <div class="header">
+    <img v-if="image" :src="require(`../assets/images/${image}`)">
+    <div class="text-section">
+      <div class="title-section">
+        <h1 class="title">{{ title }}</h1>
+        <span class="japanese-text">{{ textBackground }}</span>
       </div>
-      <p>{{paragraphe}}</p>
+      <p>{{paragraph}}</p>
     </div>
+  </div>
 </template>
 
 <script>
@@ -13,50 +16,98 @@ export default {
   props: {
     title: String,
     textBackground: String,
-    paragraphe: String,
-    width: {
-      type: String,
-      default: '100%'
-    }
-  },
+    paragraph: String,
+    image: String
+  }
 }
 </script>
 
 <style scoped lang="scss">
- @import '../assets/styles/style.scss';
 
+@import '../assets/styles/style.scss';
 
-  .header {
+.header {
+  display: flex;
+  flex-direction: column;
 
-    .title {
-      position: relative;
-      z-index: 1;
+  @media screen and (min-width: 850px) {
+    flex-direction: row; 
+  }
+}
+
+img {
+  order: 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  @media screen and (min-width: 850px) {
+    order: unset;
+    width: 40%;
+    margin-right: 25px;
+  }
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-section {
+  position: relative;
+  line-height: 50px;
+  z-index: 1;
+
+  @media screen and (min-width: 450px) {
+    line-height: 60px;
+  }
+
+  @media screen and (min-width: 500px) {
+    line-height: 80px;
+  }
+
+  @media screen and (min-width: 875px) {
+    line-height: 88px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    line-height: 100px;
+  }
+
+  .japanese-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    color: $pink;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+
+ 
+    @media screen and (min-width: 450px) {
+      font-size: 60px;
     }
 
-    p {
-      position: relative;
-      z-index: 1;
+    @media screen and (min-width: 500px) {
+      font-size: 80px;
     }
 
-    span {
-      display: none;
-      font-size: 4em;
-      color: $pink;
-      position: absolute;
-      z-index: -1;
-      top: 50%;
-      transform: translateY(-50%);
-      left: -20px;
+    @media screen and (min-width: 875px) {
+      font-size: 88px;
+    }
 
-      @media screen and (min-width: 700px) {
-        display: block;
-      }
-
-      @media screen and (min-width: 950px) {
-        display: block;
-        font-size: 6em;
-      }
+    @media screen and (min-width: 1000px) {
+      font-size: 100px;
     }
   }
+}
+
+p {
+  margin: 15px 0 20px 0;
+  max-width: 650px;
+  z-index: 1;
+}
 
 </style>
