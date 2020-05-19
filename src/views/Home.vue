@@ -59,6 +59,9 @@ export default {
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
+    background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.671)), url("../assets/images/background.png") no-repeat center 450px;
+    object-fit: cover;
+    padding-bottom: 120px;
 
     .yokai {
       display: flex;
