@@ -72,7 +72,7 @@ export default {
     p {
       font-weight: normal;
       font-size: 18px;
-      line-height: calc(18px*1.25);
+      line-height: calc(18px*1.75);
       text-align: justify;
     }
   }
