@@ -34,6 +34,7 @@ export default {
   .article {
     max-width: 800px;
     margin: 0 auto;
+    min-height: 30vh;
   }
 
   .title {
