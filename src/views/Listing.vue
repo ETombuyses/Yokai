@@ -1,13 +1,15 @@
 <template>
-  <div class="listing">
+  <div>
     <Header 
     class="header"
     :title="'Tous nos articles'"
     :textBackground="'ブログ記事'"
     />
-    <div class="content">
-      <ArticleListItem class="post" v-for="post in posts" :key="post.id" :post="post"/>
-    </div>
+    <ul class="list">
+      <li class="post" v-for="post in posts" :key="post.id">
+        <ArticleListItem :post="post"/>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -39,45 +41,39 @@ export default {
 
 <style scoped lang="scss">
 
- @import '../assets/styles/style.scss';
+@import '../assets/styles/style.scss';
 
+.header {
+  margin-bottom: 56px;
+  width: 100%;
+}
 
-  .header {
-    margin-bottom: 56px;
+.list {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.post {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 60px;
   }
 
-  .listing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: 100px auto 0;
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      justify-items: center;
-      justify-content: center;
-      margin-bottom: 120px;
-    }
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 120px;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $grey;
   }
-
-  .post {
-    position: relative;
-
-
-    &:not(:last-child) {
-      margin-bottom: 60px;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 1px;
-      width: 120px;
-      background: $grey;
-      bottom: -30px;
-    }
-  }
+}
 </style>

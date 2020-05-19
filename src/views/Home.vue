@@ -64,20 +64,9 @@ export default {
 
 @import '../assets/styles/style.scss';
 
-.home {
-  padding: 20px;
-  max-width: 1400px;
-  margin: 0 auto;
-  background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.671)), url("../assets/images/sakana.png") no-repeat center 350px;
-  object-fit: cover;
-
-  @media screen and (min-width: 500px) {
-    padding: 20px 40px;
-  }
-}
-
 .header {
   margin-bottom: 50px;
+  width: 100%;
 
   @media screen and (min-width: 500px) {
     margin-bottom: 70px;

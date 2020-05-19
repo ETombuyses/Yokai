@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <Navigation class="main-nav"/>
-    <router-view/>
+    <div class="main" 
+    :class="{sakana: $route.path === `/`}"
+    >
+      <router-view/>
+    </div>
     <Footer/>
   </div>
 </template>
@@ -22,11 +26,26 @@ export default {
 
 @import './assets/styles/style.scss';
 
-.main-nav {
+nav.main-nav {
   margin-bottom: 10px;
 
   @media screen and (min-width: 800px) {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+.main {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  &.sakana {
+    background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.671)), url("./assets/images/sakana.png") no-repeat center 350px;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: 500px) {
+    padding: 30px 40px;
   }
 }
 </style>

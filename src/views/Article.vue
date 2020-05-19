@@ -1,12 +1,14 @@
 <template>
-  <div v-if="post" class="article">
+  <article v-if="post">
+    <header class="title-section">
       <h1 class="title">{{post.title}}</h1>
-      <span>{{post.kanji}}</span>
-      <img :src="require(`../assets/images/${post.img}.jpeg`)">
-      <div class="content">
-        <p v-for="(paragraph, index) in post.body" :key="index">{{paragraph}}</p>
-      </div>
-  </div>
+      <span class="kanji">{{post.kanji}}</span>
+    </header>
+    <img :src="require(`../assets/images/${post.img}.jpeg`)">
+    <div class="content">
+      <p v-for="(paragraph, index) in post.body" :key="index">{{paragraph}}</p>
+    </div>
+  </article>
 </template>
 
 <script>
@@ -33,50 +35,67 @@ export default {
 
 @import '../assets/styles/style.scss';
 
-.article {
-  max-width: 1000px;
-  margin: 0 auto;
-  min-height: 30vh;
-  margin-bottom: 60px;
+.title-section {
   position: relative;
-   
-  @media screen and (max-width: 500px) {
-    padding: 20px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 500px) {
+    margin-bottom: 30px;
   }
 
-  span {
+  .title {
+    text-align: center;
+    line-height: 60px;
+
+    @media screen and (min-width: 500px) {
+      line-height: 80px;
+    }
+  }
+
+  .kanji {
     position: absolute;
     font-weight: bold;
-    font-size: 50px;
-    top: -15px;
-    left: 55%;
-    color: rgba(255, 0, 43, 0.274);
-    transform: translateX(-50%);
-  }
-
-  img {
+    text-align: center;
     width: 100%;
-    height: 300px;
-    object-fit: none;
-    object-position: 50% 30%;
+    font-size: 60px;
+    color: $red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.2;
+
+    @media screen and (min-width: 500px) {
+      font-size: 80px;
+    }
   }
 }
 
-.title {
-  text-align: center;
+img {
+  height: auto;
+  width: 100%;
+  margin-bottom: 25px;
+
+  @media screen and (min-width: 500px) {
+    width: 100%;
+    height: 350px;
+    object-fit: none;
+    object-position: 60% 30%;
+    margin-bottom: 35px;
+  }
 }
+
 
 .content {
   max-width: 650px;
-  text-align: center;
   margin: 0 auto;
 
   p {
     text-align: justify;
-  }
-}
 
-p:not(:last-child) {
-  margin-bottom: 10px;
+    &:not(:last-child) {
+     margin-bottom: 30px;
+    }
+  }
 }
 </style>
