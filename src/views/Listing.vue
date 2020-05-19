@@ -1,24 +1,24 @@
 <template>
-  <div class="about">
+  <div class="listing">
     <Header 
+    class="header"
     :title="'Tous nos articles'"
     :textBackground="'ブログ記事'"
     />
     <div class="content">
-      <div class="card background1" v-for="post in posts" :key="post.id">
-        <router-link class="card_link" :to="`/article/${post.id}`">
-          {{post.title}}
-        </router-link>
-      </div>
+      <ArticleListItem class="post" v-for="post in posts" :key="post.id" :post="post"/>
     </div>
   </div>
 </template>
 
 <script>
 import Header from '../components/Header'
+import ArticleListItem from '../components/ArticleListItem'
+
 export default {
   components: {
-    Header
+    Header,
+    ArticleListItem
   },
   data() {
     return {
@@ -42,35 +42,41 @@ export default {
     box-sizing: border-box;
   }
 
-.about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-items: center;
-    justify-content: center;
+  .header {
+    margin-bottom: 56px;
   }
 
-  .card {
-    margin: 10px;
-    width: 45%;
-    padding: 10px;
-    border: 1px solid black;
+  .listing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 100px auto 0;
 
-    .card_link{
-      font-weight: bold;
-      text-decoration: none;
-      color: #181818;
-      transition: border 0.3s;
-      font-family: Avenir, Helvetica, Arial, sans-serif;
-      
-      &:hover {
-        border-bottom: 2px #181818 solid;
-      }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      justify-content: center;
     }
   }
-}
+
+  .post {
+    position: relative;
+
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 120px;
+      background: grey;
+      bottom: -30px;
+    }
+  }
 </style>
