@@ -30,12 +30,14 @@ export default {
 
     &:hover .title {
       color: #D90429;
+      border-bottom: 2px solid #D90429;
     }
 
     .title {
       position: relative;
       font-size: 20px;
       margin-top: 0;
+      transition: 0.3s;
 
       &::after {
         content: "";
