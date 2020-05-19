@@ -68,6 +68,13 @@ export default {
     max-width: 650px;
     text-align: center;
     margin: 0 auto;
+
+    p {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: calc(18px*1.25);
+      text-align: justify;
+    }
   }
 
   p:not(:last-child) {
