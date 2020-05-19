@@ -33,16 +33,9 @@ div {
     width: 100%;
   }
 
-  h3,p,a {
-    margin: 0;
-  }
-
   h3 {
     margin-bottom: 8px;
     font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
   }
 
   p {

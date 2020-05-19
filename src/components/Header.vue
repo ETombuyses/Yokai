@@ -27,10 +27,15 @@ export default {
 
 
   .header {
-    text-align: justify;
 
     .title {
       position: relative;
+      z-index: 1;
+    }
+
+    p {
+      position: relative;
+      z-index: 1;
     }
 
     span {
@@ -38,6 +43,7 @@ export default {
       font-size: 4em;
       color: $pink;
       position: absolute;
+      z-index: -1;
       top: 50%;
       transform: translateY(-50%);
       left: -20px;

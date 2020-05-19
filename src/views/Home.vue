@@ -103,9 +103,6 @@ export default {
     h2 {
       margin-bottom: 30px;
       font-style: normal;
-      font-weight: bold;
-      font-size: 32px;
-      line-height: 38px;
     }
 
     .articles {
