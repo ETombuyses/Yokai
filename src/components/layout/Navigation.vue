@@ -1,6 +1,6 @@
 <template>
   <nav class="nav">
-    <img class="logo" :src="require('../../assets/images/yokai-logo.png')">
+    <img class="logo" :src="require('../../assets/images/yokai-logo.png')" alt="logo yokai">
     <ul class="links">
       <li class="link"><router-link to="/">Accueil</router-link></li>
       <li class="link"><router-link to="/listing">Yokais</router-link></li>

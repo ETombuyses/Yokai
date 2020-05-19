@@ -4,7 +4,7 @@
       <h1 class="title">{{post.title}}</h1>
       <span class="kanji">{{post.kanji}}</span>
     </header>
-    <img :src="require(`../assets/images/${post.img}.jpeg`)">
+    <img :src="require(`../assets/images/${post.img}.jpeg`)" :alt="`yokai ${post.title}`">
     <div class="content">
       <p v-for="(paragraph, index) in post.body" :key="index">{{paragraph}}</p>
     </div>
