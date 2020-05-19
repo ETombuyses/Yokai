@@ -3,7 +3,7 @@
     <router-link class="card_link" :to="`/article/${post.id}`">
       <div class="post">
         <h2 class="title">{{post.title}}</h2>
-        <p>{{post.body}}</p>
+        <p>{{post.body[0]}}</p>
       </div>
     </router-link>
   </div>
@@ -55,7 +55,7 @@ export default {
 
     p {
       margin: 0;
-      max-width: 30ch;
+      max-width: 80ch;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

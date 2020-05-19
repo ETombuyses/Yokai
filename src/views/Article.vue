@@ -1,7 +1,9 @@
 <template>
   <div v-if="post" class="article">
       <h1 class="title">{{post.title}}</h1>
-      <p class="content">{{post.body}}</p>
+      <div class="content">
+        <p v-for="(paragraph, index) in post.body" :key="index">{{paragraph}}</p>
+      </div>
   </div>
 </template>
 
@@ -15,7 +17,7 @@ export default {
   computed: {
   },
   created () {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${this.$route.params.slug}`).then(response => {
+    fetch(`https://my-json-server.typicode.com/ETombuyses/YokaiDB/posts/${this.$route.params.slug}`).then(response => {
       // json() pour transformer les data en json
       response.json().then(data => {
         this.post = data
@@ -45,5 +47,9 @@ export default {
     max-width: 650px;
     text-align: center;
     margin: 0 auto;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 10px;
   }
 </style>
