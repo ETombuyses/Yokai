@@ -2,12 +2,12 @@
   <div class="home">
     <div class="yokai">
       <img src="../assets/images/home.jpg">
-      <Header title="Qu’est ce qu’un Yokai ?" textBackground="日本の妖怪" paragraphe="Monstre, créature, esprit, fantôme, objet, démon où tout autre apparition étrange souvent malfaisant ou simplement malicieux du folklore japonais qui incarne les obsessions, les vices, les craintes, les mal-être, les blessures, les rancoeurs et tout état émotionnel compliqué des humains. Ils représentent également des phénomènes naturels, des objets créés par les hommes ou des éléments naturels inanimés (rocher…)."/>
+      <Header v-if="definition" title="Qu’est ce qu’un Yokai ?" textBackground="日本の妖怪" :paragraphe="definition"/>
     </div>
     <div class="articles_section">
       <h2>Les nouveaux articles</h2>
-      <div class="articles" >
-        <ArticleComponent class="article_component" v-for="article in articles" :key="article.id" :article="article" buttonText="Lire l'article"/>
+      <div class="articles"  v-if="posts" >
+        <ArticleComponent class="article_component" v-for="(post, index) in 3" :key="posts[index].id" :post="posts[index]" buttonText="Lire l'article"/>
       </div>
     </div>
   </div>
@@ -26,21 +26,26 @@ export default {
   },
   data () {
     return {
-      articles: [
-        {
-          title: "Tengu",
-          paragraphe: "Ce sont les équivalents de la culture japonaise de nos ogres ou autres trolls, souvent bleus ou rou...",
-        },
-        {
-          title: "Kurobozu",
-          paragraphe: "Il apparaît en pleine nuit dans les chambres à coucher et absorbe le souffle des personnes qui y dorment.",
-        },
-        {
-          title: "Wanyudo",
-          paragraphe: "Wanyudo à l’apparence d’une roue de chariot en feu avec la tête d’un homme au milieu. Il est l’âme damn...",
-        },
-      ]
+      posts: null,
+      definition: null
     }
+  },
+  created () {
+    fetch('https://my-json-server.typicode.com/ETombuyses/YokaiDB/posts').then(response => {
+      // json() pour transformer les data en json
+      console.log(response.body)
+      response.json().then(data => {
+        this.posts = data
+      })
+    })
+
+    fetch('https://my-json-server.typicode.com/ETombuyses/YokaiDB/yokaiDefinition').then(response => {
+      // json() pour transformer les data en json
+      console.log(response.body)
+      response.json().then(data => {
+        this.definition = data[0].definition
+      })
+    })
   }
 }
 </script>
