@@ -11,8 +11,8 @@
     <div class="footer">
       <img class="logo" :src="require('./assets/yokai-logo.png')">
       <div class="links">
-        <router-link class="link" to="/">Home</router-link>
-        <router-link class="link" to="/listing">Listing</router-link>
+        <router-link class="link" to="/">Accueil</router-link>
+        <router-link class="link" to="/listing">Les Yokais</router-link>
       </div>
       <p>Crée avec ❤️ par Emilie, Cassandra and Tristan</p>
     </div>
