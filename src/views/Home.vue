@@ -7,7 +7,7 @@
     <div class="articles_section">
       <h2>Les nouveaux articles</h2>
       <div class="articles" >
-        <ArticleComponent v-for="article in articles" :key="article.id" :article="article" buttonText="Lire l'article"/>
+        <ArticleComponent class="article_component" v-for="article in articles" :key="article.id" :article="article" buttonText="Lire l'article"/>
       </div>
     </div>
   </div>
@@ -55,15 +55,16 @@ export default {
     width: 100%;
     padding-left: 40px;
     padding-right: 80px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
+    background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.671)), url("../assets/images/background.png") no-repeat center 350px;
+    object-fit: cover;
+    padding-bottom: 120px;
 
     .yokai {
       display: flex;
       margin-bottom: 120px;
-      margin-top: 120px;
+      margin-top: 60px;
     }
   }
 
@@ -101,6 +102,17 @@ export default {
       display: flex;
       justify-content: space-between;
 
+      @media screen and (max-width: 500px) {
+        flex-direction: column;
+      }
+
+      .article_component{
+        width: 25%;
+        @media screen and (max-width: 500px) {
+          width: 100%;
+          padding-bottom: 40px;
+        }
+      }
     }
   }
 </style>
