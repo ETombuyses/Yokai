@@ -32,7 +32,7 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: $black;
 }
 
 .nav {
@@ -57,11 +57,11 @@
     text-decoration: none;
     margin-right: 10px;
     font-weight: bold;
-    color: #181818;
+    color: $black;
     transition: border 0.3s;
 
     &:hover {
-      border-bottom: 2px #181818 solid;
+      border-bottom: 2px $black solid;
     }
 
     &:not(:last-child) {
@@ -76,16 +76,16 @@
       position: absolute;
       height: 22px;
       width: 1px;
-      background: grey;
+      background: $grey;
       right: -20px;
     }
   }
 
 
   a.router-link-exact-active {
-    border-bottom: 2px #d60000 solid;
+    border-bottom: 2px  solid;
     font-weight: bold;
-    color: #d60000;
+    color: $red;
   }
 }
 
@@ -94,7 +94,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(217, 4, 41, 0.1);
+  background: $pink;
   margin: 0;
   padding: 16px;
 
@@ -112,20 +112,20 @@
     font-weight: 500;
     font-size: 10px;
     line-height: 12px;
-    color: rgba(43, 45, 66, 0.5);
+    color: $grey;
   }
 
   .link {
     position: relative;
     text-decoration: none;
     font-weight: bold;
-    color: #181818;
+    color: $black;
     transition: border 0.3s;
     font-size: 12px;
     margin-bottom: 21px;
 
     &:hover {
-      border-bottom: 2px #181818 solid;
+      border-bottom: 2px $black solid;
     }
 
     &:not(:last-child) {
@@ -138,9 +138,9 @@
 
 
   a.router-link-exact-active {
-    border-bottom: 2px #d60000 solid;
+    border-bottom: 2px $red solid;
     font-weight: bold;
-    color: #d60000;
+    color: $red;
   }
 }
 

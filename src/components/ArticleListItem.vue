@@ -25,8 +25,8 @@ export default {
     text-transform: capitalize;
 
     &:hover .title {
-      color: #D90429;
-      border-bottom: 2px solid #D90429;
+      color: $red;
+      border-bottom: 2px solid $red;
     }
 
     .title {
@@ -41,7 +41,7 @@ export default {
         display: block;
         width: 10px;
         height: 10px;
-        background: #D90429;
+        background: $red;
         right: -30px;
         top: 50%;
         transform: translateY(-50%);
@@ -60,7 +60,7 @@ export default {
 
   a {
     text-decoration: none;
-    color: black;
+    color: $black;
   }
 
 

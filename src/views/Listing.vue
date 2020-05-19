@@ -73,7 +73,7 @@ export default {
       display: block;
       height: 1px;
       width: 120px;
-      background: grey;
+      background: $grey;
       bottom: -30px;
     }
   }
