@@ -1,23 +1,42 @@
 <template>
   <div class="about">
     <h1>This is an listing page</h1>
-    <ul>
-      <li></li>
-      <!-- <li><router-link to="/article/Kurobozu">Kurobozu</router-link></li>
-      <li><router-link to="/article/Oni">Oni</router-link></li>
-      <li><router-link to="/article/Tengu">Tengu</router-link></li>
-      <li><router-link to="/article/Kitsune">Kitsune</router-link></li>
-      <li><router-link to="/article/Hone_onna">Hone onna</router-link></li>
-      <li><router-link to="/article/Wanyudo">Wanyudo</router-link></li>
-      <li><router-link to="/article/Tenome">Tenome</router-link></li>
-      <li><router-link to="/article/Godzilla">Godzilla</router-link></li> -->
-    </ul>
+    <div class="content">
+      <div class="card" v-for="post in posts" :key="post.id">
+        <router-link :to="`/article/${post.id}`">
+          {{post.title}}
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      posts: null
+    }
+  },
   created () {
-    
+    fetch('https://jsonplaceholder.typicode.com/posts').then(response => {
+      // json() pour transformer les data en json
+      response.json().then(data => {
+        this.posts = data
+      })
+    })
   }
 }
 </script>
+
+<style scoped>
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 33%;
+    padding: 10px;
+    border: 1px solid black;
+  }
+</style>
