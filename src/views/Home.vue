@@ -88,12 +88,18 @@ export default {
     .yokai {
       margin-bottom: 10px;
       margin-top: 10px;
+      @media screen and (max-width: 500px) {
+        padding: 20px;
+      }
     }
     }
   }
 
   .articles_section {
     width: 100%;
+    @media screen and (max-width: 500px) {
+      padding: 20px;
+    }
 
     h2 {
       margin-bottom: 30px;
