@@ -40,6 +40,9 @@ export default {
     min-height: 30vh;
     margin-bottom: 60px;
     position: relative;
+    @media screen and (max-width: 500px) {
+      padding: 20px;
+    }
 
     span {
       position: absolute;
