@@ -3,7 +3,7 @@
         <img :src="require(`../assets/images/${article.image}.jpeg`)">
         <h3>{{article.title}}</h3>
         <p>{{article.paragraphe}}</p>
-        <a>{{buttonText}}</a>
+        <a :href="path" >{{buttonText}}</a>
     </div>
 </template>
 
@@ -12,6 +12,7 @@ export default {
     props: {
     article: Object,
     buttonText: String,
+    path: String
     },
 }
 </script>

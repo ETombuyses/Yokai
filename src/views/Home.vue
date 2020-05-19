@@ -7,7 +7,7 @@
     <div class="articles_section">
       <h2>Les nouveaux articles</h2>
       <div class="articles" >
-        <ArticleComponent class="article_component" v-for="article in articles" :key="article.id" :article="article" buttonText="Lire l'article"/>
+        <ArticleComponent class="article_component" v-for="article in articles" :key="article.id" :article="article" :path="article.path" buttonText="Lire l'article"/>
       </div>
     </div>
   </div>
@@ -31,16 +31,19 @@ export default {
           title: "Tengu",
           image: "tengu",
           paragraphe: "Ce sont les équivalents de la culture japonaise de nos ogres ou autres trolls, souvent bleus ou rou...",
+          path: "/#/article/1",
         },
         {
           title: "Kurobozu",
           image: "kurobozu",
           paragraphe: "Il apparaît en pleine nuit dans les chambres à coucher et absorbe le souffle des personnes qui y dorment.",
+          path: "/#/article/3",
         },
         {
           title: "Wanyudo",
           image: "wanyudo",
           paragraphe: "Wanyudo à l’apparence d’une roue de chariot en feu avec la tête d’un homme au milieu. Il est l’âme damn...",
+          path: "/#/article/6",
         },
       ]
     }
