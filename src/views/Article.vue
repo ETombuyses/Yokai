@@ -1,7 +1,7 @@
 <template>
-  <div v-if="post">
-      <h1>{{post.title}}</h1>
-      <p>{{post.body}}</p>
+  <div v-if="post" class="article">
+      <h1 class="title">{{post.title}}</h1>
+      <p class="content">{{post.body}}</p>
   </div>
 </template>
 
@@ -27,4 +27,22 @@ export default {
 
 <style scoped lang="scss">
 
+* {
+  box-sizing: border-box;
+}
+
+  .article {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .content {
+    max-width: 650px;
+    text-align: center;
+    margin: 0 auto;
+  }
 </style>
