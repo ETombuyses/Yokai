@@ -8,7 +8,9 @@ body {
 h1 {
   font-weight: bold;
   font-size: 30px;
-  font-family: 'Times New Roman', Times, serif;
+  // font-family: 'Times New Roman', Times, serif;
+  font-family: 'Merriweather', serif;
+  letter-spacing: 3px;
 
 
   @media screen and (min-width: 500px) {
@@ -19,7 +21,10 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 25px;
-  font-family: 'Times New Roman', Times, serif;
+  // font-family: 'Times New Roman', Times, serif;
+  font-family: 'Merriweather', serif;
+  letter-spacing: 2px;
+
 
   @media screen and (min-width: 500px) {
     font-size: 30px;
@@ -32,15 +37,19 @@ h3 {
 }
 
 p {
-  font-size: 17px;
   line-height: 150%;
   font-weight: normal;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 19px;
+
+  // font-family: Arial, Helvetica, sans-serif;
+  // font-size: 17px;
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  // font-family: Arial, Helvetica, sans-serif;
   color: $black;
 }
