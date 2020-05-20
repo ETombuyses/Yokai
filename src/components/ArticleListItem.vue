@@ -2,8 +2,8 @@
   <div v-if="post">
     <router-link :to="`/article/${post.id}`">
       <article class="post">
-        <h2 class="title">{{post.title}}</h2>
-        <p class="body">{{post.body[0]}}</p>
+        <h2 class="title">{{ post.title }}</h2>
+        <p class="body">{{ post.body[0] }}</p>
       </article>
     </router-link>
   </div>
@@ -13,11 +13,10 @@ export default {
   props: {
     post: Object
   }
-}
+};
 </script>
 <style lang="scss" scoped>
-
-@import '../assets/styles/style.scss';
+@import "../assets/styles/style.scss";
 
 .post {
   max-width: 800px;
@@ -49,7 +48,7 @@ export default {
     transform: translateX(-50%);
     border-radius: 50%;
   }
-} 
+}
 
 .body {
   margin: 0 auto;
@@ -62,5 +61,4 @@ export default {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-
 </style>

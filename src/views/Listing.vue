@@ -1,21 +1,21 @@
 <template>
   <div>
-    <Header 
-    class="header"
-    :title="'Tous nos articles'"
-    :textBackground="'ブログ記事'"
+    <Header
+      class="header"
+      :title="'Tous nos articles'"
+      :textBackground="'ブログ記事'"
     />
     <ul class="list">
       <li class="post" v-for="post in posts" :key="post.id">
-        <ArticleListItem :post="post"/>
+        <ArticleListItem :post="post" />
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import Header from '../components/Header'
-import ArticleListItem from '../components/ArticleListItem'
+import Header from "../components/Header";
+import ArticleListItem from "../components/ArticleListItem";
 
 export default {
   components: {
@@ -25,23 +25,24 @@ export default {
   data() {
     return {
       posts: null
-    }
+    };
   },
-  created () {
-    fetch('https://my-json-server.typicode.com/ETombuyses/YokaiDB/posts').then(response => {
-      // json() pour transformer les data en json
-      console.log(response.body)
-      response.json().then(data => {
-        this.posts = data
-      })
-    })
+  created() {
+    fetch("https://my-json-server.typicode.com/ETombuyses/YokaiDB/posts").then(
+      response => {
+        // json() pour transformer les data en json
+        console.log(response.body);
+        response.json().then(data => {
+          this.posts = data;
+        });
+      }
+    );
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
-
-@import '../assets/styles/style.scss';
+@import "../assets/styles/style.scss";
 
 .header {
   margin-bottom: 56px;

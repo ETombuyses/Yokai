@@ -1,39 +1,44 @@
 <template>
   <article v-if="post">
     <header class="title-section">
-      <h1 class="title">{{post.title}}</h1>
-      <span class="kanji">{{post.kanji}}</span>
+      <h1 class="title">{{ post.title }}</h1>
+      <span class="kanji">{{ post.kanji }}</span>
     </header>
-    <img :src="require(`../assets/images/${post.img}.jpeg`)" :alt="`yokai ${post.title}`">
+    <img
+      :src="require(`../assets/images/${post.img}.jpeg`)"
+      :alt="`yokai ${post.title}`"
+    />
     <div class="content">
-      <p v-for="(paragraph, index) in post.body" :key="index">{{paragraph}}</p>
+      <p v-for="(paragraph, index) in post.body" :key="index">
+        {{ paragraph }}
+      </p>
     </div>
   </article>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       post: null
-    }
+    };
   },
-  computed: {
-  },
-  created () {
-    fetch(`https://my-json-server.typicode.com/ETombuyses/YokaiDB/posts/${this.$route.params.slug}`).then(response => {
+  computed: {},
+  created() {
+    fetch(
+      `https://my-json-server.typicode.com/ETombuyses/YokaiDB/posts/${this.$route.params.slug}`
+    ).then(response => {
       // json() pour transformer les data en json
       response.json().then(data => {
-        this.post = data
-      })
-    })
+        this.post = data;
+      });
+    });
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
-
-@import '../assets/styles/style.scss';
+@import "../assets/styles/style.scss";
 
 .title-section {
   position: relative;
@@ -85,7 +90,6 @@ img {
   }
 }
 
-
 .content {
   max-width: 650px;
   margin: 0 auto;
@@ -94,7 +98,7 @@ img {
     text-align: justify;
 
     &:not(:last-child) {
-     margin-bottom: 30px;
+      margin-bottom: 30px;
     }
   }
 }

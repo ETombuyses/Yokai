@@ -1,12 +1,16 @@
 <template>
   <div class="header">
-    <img v-if="image" :src="require(`../assets/images/${image}`)" alt="`représentations de différents yokai`">
+    <img
+      v-if="image"
+      :src="require(`../assets/images/${image}`)"
+      alt="`représentations de différents yokai`"
+    />
     <div class="text-section">
       <div class="title-section">
         <h1 class="title">{{ title }}</h1>
         <span class="japanese-text">{{ textBackground }}</span>
       </div>
-      <p>{{paragraph}}</p>
+      <p>{{ paragraph }}</p>
     </div>
   </div>
 </template>
@@ -19,19 +23,18 @@ export default {
     paragraph: String,
     image: String
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
-
-@import '../assets/styles/style.scss';
+@import "../assets/styles/style.scss";
 
 .header {
   display: flex;
   flex-direction: column;
 
   @media screen and (min-width: 850px) {
-    flex-direction: row; 
+    flex-direction: row;
   }
 }
 
@@ -86,7 +89,6 @@ img {
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 
- 
     @media screen and (min-width: 450px) {
       font-size: 60px;
     }
@@ -110,5 +112,4 @@ p {
   max-width: 650px;
   z-index: 1;
 }
-
 </style>
