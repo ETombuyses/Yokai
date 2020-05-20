@@ -1,10 +1,13 @@
 <template>
   <article v-if="post" class="article">
     <router-link :to="`/article/${post.id}`">
-      <img :src="require(`../assets/images/${post.img}.jpeg`)" :alt="`yokai ${post.title}`">
-      <h3 class="title">{{post.title}}</h3>
-      <p class="body">{{post.body[0]}}</p>
-      <span class="link">{{buttonText}}</span>
+      <img
+        :src="require(`../assets/images/${post.img}.jpeg`)"
+        :alt="`yokai ${post.title}`"
+      />
+      <h3 class="title">{{ post.title }}</h3>
+      <p class="body">{{ post.body[0] }}</p>
+      <span class="link">{{ buttonText }}</span>
     </router-link>
   </article>
 </template>
@@ -15,12 +18,11 @@ export default {
     post: Object,
     buttonText: String
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
-
-@import '../assets/styles/style.scss';
+@import "../assets/styles/style.scss";
 
 .article {
   cursor: pointer;

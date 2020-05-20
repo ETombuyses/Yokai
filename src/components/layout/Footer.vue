@@ -1,19 +1,22 @@
 <template>
   <footer class="footer">
-    <img class="logo" :src="require('../../assets/images/yokai-logo.png')" alt="logo yokai">
-    <address class="credentials">Crée avec ❤️ par Emilie Tombuyses, Cassandra Doux and Tristan Lemire</address>
+    <img
+      class="logo"
+      :src="require('../../assets/images/yokai-logo.png')"
+      alt="logo yokai"
+    />
+    <address class="credentials">
+      Crée avec ❤️ par Emilie Tombuyses, Cassandra Doux and Tristan Lemire
+    </address>
   </footer>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped lang="scss">
-
-@import '../../assets/styles/style.scss';
+@import "../../assets/styles/style.scss";
 
 .footer {
   display: flex;
@@ -39,5 +42,4 @@ export default {
   font-size: 14px;
   color: $grey;
 }
-
 </style>

@@ -1,68 +1,71 @@
 <template>
   <div class="home">
-
-    <Header 
-    v-if="definition" 
-    class="header"
-    title="Qu’est ce qu’un Yokai ?" 
-    textBackground="妖怪とは？" 
-    :paragraph="definition" 
-    image="yokai.jpg"/>
+    <Header
+      v-if="definition"
+      class="header"
+      title="Qu’est ce qu’un Yokai ?"
+      textBackground="妖怪とは？"
+      :paragraph="definition"
+      image="yokai.jpg"
+    />
 
     <h2 class="newArticles-title">Les nouveaux articles</h2>
     <ul class="articles" v-if="posts">
-      <li class="article" v-for="(post, index) in 3" :key="posts[index].id" >
+      <li class="article" v-for="(post, index) in 3" :key="posts[index].id">
         <ArticleComponent
-        class="article-item"
-        :key="posts[index].id" 
-        :post="posts[index]" 
-        buttonText="Lire l'article"/>
+          class="article-item"
+          :key="posts[index].id"
+          :post="posts[index]"
+          buttonText="Lire l'article"
+        />
       </li>
     </ul>
-
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Header from '@/components/Header.vue'
-import ArticleComponent from '@/components/ArticleComponent.vue'
+import Header from "@/components/Header.vue";
+import ArticleComponent from "@/components/ArticleComponent.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Header,
     ArticleComponent
   },
-  data () {
+  data() {
     return {
       posts: null,
       definition: null
-    }
+    };
   },
-  created () {
-    fetch('https://my-json-server.typicode.com/ETombuyses/YokaiDB/posts').then(response => {
-      // json() pour transformer les data en json
-      console.log(response.body)
-      response.json().then(data => {
-        this.posts = data
-      })
-    })
+  created() {
+    fetch("https://my-json-server.typicode.com/ETombuyses/YokaiDB/posts").then(
+      response => {
+        // json() pour transformer les data en json
+        console.log(response.body);
+        response.json().then(data => {
+          this.posts = data;
+        });
+      }
+    );
 
-    fetch('https://my-json-server.typicode.com/ETombuyses/YokaiDB/yokaiDefinition').then(response => {
+    fetch(
+      "https://my-json-server.typicode.com/ETombuyses/YokaiDB/yokaiDefinition"
+    ).then(response => {
       // json() pour transformer les data en json
-      console.log(response.body)
+      console.log(response.body);
       response.json().then(data => {
-        this.definition = data[0].definition
-      })
-    })
+        this.definition = data[0].definition;
+      });
+    });
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-
-@import '../assets/styles/style.scss';
+@import "../assets/styles/style.scss";
 
 .header {
   margin-bottom: 50px;
@@ -84,7 +87,6 @@ export default {
     margin-bottom: 40px;
   }
 }
-
 
 .articles {
   width: 100%;
@@ -125,5 +127,4 @@ export default {
     }
   }
 }
-
 </style>
