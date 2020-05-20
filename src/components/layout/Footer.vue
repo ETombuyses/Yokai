@@ -6,7 +6,7 @@
       alt="logo yokai"
     />
     <address class="credentials">
-      Crée avec ❤️ par Emilie Tombuyses, Cassandra Doux and Tristan Lemire
+      Crée avec ❤️ par Emilie Tombuyses, Cassandra Doux et Tristan Lemire
     </address>
   </footer>
 </template>
