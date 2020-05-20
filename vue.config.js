@@ -19,19 +19,19 @@ module.exports = {
       display: "fullscreen",
       icons: [
         {
-            'src': 'img/icons/icon-192x192.png',
-            'sizes': '192x192',
-            'type': 'image/png',
+          'src': 'img/icons/icon-192x192.png',
+          'sizes': '192x192',
+          'type': 'image/png',
         },
         {
-            'src': 'img/icons/icon-512x512.png',
-            'sizes': '512x512',
-            'type': 'image/png',
+          'src': 'img/icons/icon-512x512.png',
+          'sizes': '512x512',
+          'type': 'image/png',
         },
         {
-            'src': 'img/icons/icon-16x16.png',
-            'sizes': '16x16',
-            'type': 'image/png',
+          'src': 'img/icons/icon-16x16.png',
+          'sizes': '16x16',
+          'type': 'image/png',
         },
         {
           'src': 'img/icons/icon-32x32.png',
@@ -68,7 +68,7 @@ module.exports = {
           'sizes': '384x384',
           'type': 'image/png',
         },
-    ],
+      ],
     },
     // configure the workbox plugin
     workboxPluginMode: "InjectManifest",
